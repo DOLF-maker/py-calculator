@@ -26,11 +26,18 @@ def rrr_calculator(max_profit, premium_paid, premium_gain):
         "RRR (%)": rrr
     }
 
-# Call the Function
-result = rrr_calculator(max_profit, premium_paid, premium_gain)
-
-# Check and Print Result
-if isinstance(result, str):
-    print(result)  # Print error message if max_loss is zero
-else:
-    print(f"Max Profit: {result['Max Profit']}, Max Loss: {result['Max Loss']}, RRR (%): {result['RRR (%)']}")
+# Main Execution
+if __name__ == "__main__":
+    # Get user inputs
+    max_profit, premium_paid, premium_gain = user_input()
+    
+    # Calculate RRR
+    result = rrr_calculator(max_profit, premium_paid, premium_gain)
+    
+    # Check and print results
+    if isinstance(result, str):
+        print(result)  # Print error message if max_loss is zero
+    else:
+        print(f"Max Profit: {result['Max Profit']}")
+        print(f"Max Loss: {result['Max Loss']}")
+        print(f"RRR (%): {result['RRR (%)']}")
